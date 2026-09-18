@@ -38,6 +38,23 @@ void testNegativeValues() {
     assert(isSorted(arr, 5) == true);
     cout << "testNegativeValues ...... PASSED" << endl;
 }
+// some additional test cases
+void testAllEqual() {
+    int arr[] = {5, 5, 5, 5};
+    assert(isSorted(arr, 4) == true);
+    cout << "testAllEqual ............ PASSED" << endl;
+}
+void testLastElementSmaller() {
+    int arr[] = {1, 2, 3, 4, 0};
+    assert(isSorted(arr, 5) == false);
+    cout << "testLastElementSmaller .. PASSED" << endl;
+}
+
+void testEmptyArray() {
+    int arr[] = {1};
+    assert(isSorted(arr, 0) == true);
+    cout << "testEmptyArray .......... PASSED" << endl;
+}
 //calling the functions inside main
 int main() {
     testSortedArray();
@@ -46,6 +63,9 @@ int main() {
     testSingleElement();
     testDescendingArray();
     testNegativeValues();
+    testAllEqual();
+    testLastElementSmaller();
+    testEmptyArray();
     cout << "\nAll test cases passed successfully!" << endl;
     return 0;
 }
